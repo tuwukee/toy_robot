@@ -1,6 +1,6 @@
 class Robot
   attr_accessor :direction, :position
-  DIRECTIONS = ['NORTH', 'EAST', 'SOUTH', 'WEST']
+  DIRECTIONS = ['NORTH', 'EAST', 'SOUTH', 'WEST'].freeze
   PLACE_ERROR = "Oops, the robot has not been placed".freeze
   INVALID_DIRECTION = "The direction must be NORTH, EAST, SOUTH or WEST".freeze
   DONE = "Done".freeze
@@ -40,13 +40,13 @@ class Robot
   def next_position
     return false unless self.placed?
     case @direction
-      when 'NORTH'
+      when DIRECTIONS[0]
         { x: @position[:x], y: @position[:y] + 1 }
-      when 'EAST'
+      when DIRECTIONS[1]
         { x: @position[:x] + 1, y: @position[:y] }
-      when 'SOUTH'
+      when DIRECTIONS[2]
         { x: @position[:x], y: @position[:y] - 1 }
-      when 'WEST'
+      when DIRECTIONS[3]
         { x: @position[:x] - 1, y: @position[:y] }
     end
   end

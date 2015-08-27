@@ -1,4 +1,4 @@
-require './toy_robot_simulator.rb'
+require './toy_robot/toy_robot_simulator.rb'
 
 robot = Robot.new
 table = Tabletop.new(4,4)
