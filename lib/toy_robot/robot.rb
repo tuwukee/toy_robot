@@ -3,10 +3,12 @@ class Robot
   DIRECTIONS = ['NORTH', 'EAST', 'SOUTH', 'WEST'].freeze
   PLACE_ERROR = "Oops, the robot has not been placed".freeze
   INVALID_DIRECTION = "The direction must be NORTH, EAST, SOUTH or WEST".freeze
+  INVALID_POSITION = "The position must be Integer".freeze
   DONE = "Done".freeze
 
   def place(x, y, direction)
     return INVALID_DIRECTION unless self.valid_direction?(direction)
+    return INVALID_POSITION unless x.is_a?(Integer) && y.is_a?(Integer)
     @position = {x: x, y: y}
     @direction = direction
     DONE
