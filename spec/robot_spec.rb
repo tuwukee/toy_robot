@@ -1,4 +1,4 @@
-require './lib/toy_robot/robot.rb'
+require 'spec_helper'
 
 describe 'Robot' do
 

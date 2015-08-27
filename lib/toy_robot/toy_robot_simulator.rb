@@ -1,5 +1,5 @@
-require './toy_robot/tabletop.rb'
-require './toy_robot/robot.rb'
+require_relative 'tabletop'
+require_relative 'robot'
 
 class ToyRobotSimulator
   INVALID_INPUT = "Oops, Wrong input format.".freeze
